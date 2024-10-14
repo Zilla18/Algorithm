@@ -1,0 +1,31 @@
+ALGORITHM read-a-sentence
+VAR
+       // Declaring counters for characters, words, and vowels
+    charCount = 0
+    wordCount = 0
+    vowelCount = 0
+    vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    sentence = "This is an example sentence."
+BEGIN
+    // Iterate over each character in the sentence
+    for i = 0 to length(sentence) - 1 do
+    charCount = charCount + 1  // Count each character
+    
+    // Checking if the character is a vowel
+    if sentence[i] in vowels then
+        vowelCount = vowelCount + 1
+    
+    // Checking for spaces to count words
+    if sentence[i] == ' ' then
+        wordCount = wordCount + 1
+    end if
+    end for
+
+    // add 1 to word count
+    wordCount = wordCount + 1
+
+    // Output the results
+    print("Number of characters: ", charCount)
+    print("Number of words: ", wordCount)
+    print("Number of vowels: ", vowelCount)
+END
